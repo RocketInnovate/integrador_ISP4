@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse} from '@angular/common/http';
 import { JwtTokens, LoginCredentials, LoginResponse } from './auth.models';
-import { BehaviorSubject, Observable, tap, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, tap, throwError } from 'rxjs';
 import {enviroment} from '../../../enviroment/enviroment';
 import { StoreService } from './store.service';
 
@@ -13,6 +13,7 @@ import { StoreService } from './store.service';
 export class AuthService {
   loginUrl=enviroment.api_Url +'account/login/';
   refreshTokenUrl=enviroment.api_Url+'account/refresh/';
+  logoutUrl = enviroment.api_Url + 'account/logout/';
   
   private islogged = new BehaviorSubject<boolean>(false); 
 
@@ -24,9 +25,34 @@ export class AuthService {
     return  this.http.post<LoginResponse>(this.loginUrl, credentials)
   }
 
-  logOut(){
-    this.storeService.clearLocalStorage()
-    this.islogged.next(false);
+  // logOut(){
+  //   this.storeService.clearLocalStorage()
+  //   this.islogged.next(false);
+  // }
+  logOut(): Observable<any> {
+    const refreshToken = { refresh: this.storeService.getRefreshToken() };
+
+    if (!refreshToken.refresh) {
+      // No hay refresh token, así que simplemente limpia el local storage y actualiza el estado de autenticación
+      this.storeService.clearLocalStorage();
+      this.islogged.next(false);
+      return throwError(() => new Error('Refresh token no disponible'));
+    }
+
+    return this.http.post(this.logoutUrl, refreshToken).pipe(
+      tap(() => {
+        // Limpia el local storage y actualiza el estado de autenticación después del logout exitoso
+        this.storeService.clearLocalStorage();
+        this.islogged.next(false);
+      }),
+      catchError((error) => {
+        // Manejo de errores
+        this.storeService.clearLocalStorage();
+        this.islogged.next(false);
+        console.error('Logout error', error);
+        return throwError(() => new Error('Error durante el logout'));
+      })
+    );
   }
   
   refreshToken(): Observable<HttpResponse<JwtTokens>> {

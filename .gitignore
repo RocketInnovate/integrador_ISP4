@@ -338,7 +338,7 @@ venv.bak/
 
 # mkdocs documentation
 /site
-
+run_serverAPI.bat
 # mypy
 .mypy_cache/
 .dmypy.json

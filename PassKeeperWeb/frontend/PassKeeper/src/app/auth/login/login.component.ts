@@ -60,10 +60,9 @@ export class LoginComponent {
         }
     });
     }
-        
-      
+  }    
+  
 
-  }
 
   // Función para obtener el estado de error de un campo específico
   fieldError(field: string): boolean {
