@@ -1,3 +1,25 @@
-.navbar-brand {
-    color: var(--primary-color);
+  .navbar-light .navbar-nav .nav-link {
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #1090cb;
+    transition: color 0.3s ease-in-out;
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    transition: text-shadow 0.3s ease-in-out;
+  }
+  
+  .active-link-color {
+    color: #1090cb; 
+  }
+
+  .btn:hover {
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .navbar {
+    border-bottom: 1px solid #C4C4C4;
   }
