@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
@@ -6,14 +6,28 @@ import { AuthService } from 'src/app/auth/auth.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
-  isLogged=false;
-  constructor(public authService: AuthService){
+export class NavbarComponent implements OnInit {
+  isMenuOpen = false;
+  isLogged = false; // Maintain existing login state variable
+
+  constructor(public authService: AuthService) {
     this.authService.getIsLogged().subscribe(logged => {
       this.isLogged = logged;
     });
   }
-  logOut(){
-    this.authService.logOut()
+
+  ngOnInit() {
+    // Check for initial state based on media query (optional)
+    if (window.innerWidth < 768) {
+      this.isMenuOpen = true; // Set menu open for smaller screens initially
+    }
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  logOut() {
+    this.authService.logOut();
   }
 }
