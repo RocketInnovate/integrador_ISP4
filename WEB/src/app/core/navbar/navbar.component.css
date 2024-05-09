@@ -6,9 +6,9 @@
 
   .navbar-light .navbar-nav .nav-link:hover {
     color: #1090cb;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
     text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
-    transition: text-shadow 0.3s ease-in-out;
+    
   }
   
   .active-link-color {
@@ -51,7 +51,6 @@
   background-color: #1090cb;
   color: white;
   border-radius: 50px;
-  transition: background-color 0.3s ease-in-out; 
 }
 
 #loginButton:hover {
@@ -60,3 +59,7 @@
   transition: background-color 0.3s ease-in-out;
 }
 
+#logoutButton{
+  color: rgb(255, 0, 0);
+  cursor: pointer;
+}

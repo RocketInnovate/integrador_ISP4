@@ -5,7 +5,7 @@
 
 <nav class="navbar navbar-expand-lg bg-light navbar-light" style="background-color: #fff !important;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" routerLink="/" *ngIf="!isLogged">
       <img
         id="passkeeper-logo"
         src="../../../assets/passkeperlogo.png"
@@ -15,30 +15,46 @@
       />
     </a>
 
+    <a class="navbar-brand" href="#" *ngIf="isLogged">
+      <img
+        id="passkeeper-logo"
+        src="../../../assets/adminPanel.png"
+        alt="passkeeper Logo"
+        draggable="false"
+        height="50"
+      />
+    </a>
+
     <button class="navbar-toggler" type="button" (click)="toggleMenu()">
       <span class="navbar-toggler-icon"></span>
     </button>
-
+   
     <div id="navbarSupportedContent" [ngClass]="{
       'navbar-collapse': true,
       'collapse': !isMenuOpen,
       'show': isMenuOpen
     }">
       <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isLogged">
           <a class="nav-link mx-2" routerLink="/" routerLinkActive="active-link-color">Inicio</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link mx-2" routerLink="#" routerLinkActive="active-link-color">Seguridad</a>
+        <li class="nav-item" *ngIf="!isLogged">
+          <a class="nav-link mx-2" href="#header" routerLinkActive="active-link-color">Seguridad</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link mx-2" routerLink="#" routerLinkActive="active-link-color">Nosotros</a>
+        <li class="nav-item" *ngIf="!isLogged">
+          <a class="nav-link mx-2" href="#about-us" routerLinkActive="active-link-color">Nosotros</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link mx-2" routerLink="#" routerLinkActive="active-link-color">Contacto</a>
+        <li class="nav-item" *ngIf="!isLogged">
+          <a class="nav-link mx-2" href="#contact" routerLinkActive="active-link-color">Contacto</a>
         </li>
         <li class="nav-item" *ngIf="!isLogged">
           <a class="btn btn-rounded" id="loginButton" routerLink="auth/login">Registrarse</a>
+        </li>
+        <li *ngIf="isLogged" class="nav-item">
+          <a  class="nav-link centered" id="logoutButton" (click)="logOut()">Cerrar Sesion  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+          </svg></a>
         </li>
       </ul>
     </div>
