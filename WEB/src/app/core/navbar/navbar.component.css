@@ -15,7 +15,10 @@
     color: #1090cb; 
   }
 
- 
+  .btn-dark{
+    background-color: #1090cb;
+    border-color: #1090cb;
+  }
 
   .navbar {
     border-bottom: 1px solid #C4C4C4;
