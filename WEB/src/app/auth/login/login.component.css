@@ -1,4 +1,7 @@
+
 .fixed_container {
+  font-family: 'Poppins', sans-serif; /* Fuente Poppins */
+  font-size:14px;
   position: fixed;
   top: 0;
   left: 0;
@@ -10,26 +13,47 @@
   backdrop-filter: blur(10px);
 }
 .container_card{
-  box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.75);
-  -webkit-box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.75);
-margin-top:15px
+  margin-top:15px;
+  border-radius: 15px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 .container_logo{
   background: #096cb5;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 .container_logo h2{
   color: #fff;
 }
-.container-boton{
+.container_boton{
   display: flex;
   justify-content: flex-end;
   position: relative;
   width:100%;
+  height: 5%;
 }
-.btn-close{
-  color: white;
-  background-color: #fff;
+.btn_close{
+  display: flex;
+  justify-content: center;
+  border-radius: 100%;
+  padding: 3%;
+  background:none;
+  border: 1px solid #fff;
+}
+.btn_close:hover{
+  background: #fff;
+}
+.btn_close i{
+  color:#fff;
+}
+.btn_close:hover i{
+  color:#918d8d;
+}
+form input {
+  border-radius: 30px;
+}
+form button{
+  border-radius: 30px;
 }
