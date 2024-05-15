@@ -1,0 +1,10 @@
+/* Color de fondo de contact*/
+.container-row{
+    background-color:  rgba(82, 136, 161, 0.2);  
+}
+
+/* formato de los campos*/
+.form-container {
+    width: 50%; 
+    margin: 80px auto; 
+  }

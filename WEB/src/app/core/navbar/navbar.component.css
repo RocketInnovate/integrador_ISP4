@@ -1,3 +1,56 @@
 .navbar-brand {
     color: var(--primary-color);
   }
+  .navbar{
+    border-bottom: 0.7px solid#C4C4C4
+    ;
+  }
+
+#passkeeper-logo{
+  color: #1090CB;
+  font-size: 25px;
+  font-weight: bold;
+  
+}
+.nav-link{
+  color: black;
+}
+.nav-link:hover {
+  color: #1090CB;
+  transition: all 0.3s ease-in-out; 
+  
+}
+
+#logoutButton{
+  color: red;
+  cursor: pointer;
+}
+
+#logoutButton:hover{
+  color: red;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  display: none;
+}
+
+.navbar-toggler{
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important; 
+}
+
+
+.navbar-toggler::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url("../../../assets/img/burger-menu.svg");
+  background-size: contain;
+  border: none;
+}

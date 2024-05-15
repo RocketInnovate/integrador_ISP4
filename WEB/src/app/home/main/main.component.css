@@ -1,0 +1,167 @@
+.container-char {
+  display: grid;
+  grid-template-columns: 1fr 2fr; 
+  align-items: center; 
+  gap: 2px; 
+}
+
+.container .row:first-child {
+  margin-bottom: 90px;
+  margin-top: 50px; 
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+  margin-top: -20px;
+}
+
+.lock {
+  background-color: #FFD9EB;
+  border-radius: 5px; 
+}
+
+.clock {
+  background-color: #ECFFDA;
+  border-radius: 5px;
+}
+
+.mobile {
+  background-color: #DAE6FF;
+  border-radius: 5px;
+}
+
+.price-tag {
+  background-color:#FFE5DA;
+  border-radius: 5px;
+}
+
+.characteristics p:first-child {
+  font-weight: 600;  
+}
+
+.characteristics p:nth-child(2) {
+  color: var(--grey-color);
+  font-size: 15px;
+  margin-top: -8px;
+}
+
+/**/
+
+.title {
+  margin-bottom: 100px;
+}
+
+.title p:first-child {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.title p:nth-child(2){
+  color: var(--darkblue-color);
+  background-color: #F4F4F4;
+}
+
+.logo  {
+  background-color: var(--darkblue-color);
+  height: 300px;
+}
+
+.credential-title,
+.features-title {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.credential-text,
+.features-list {
+  color: var(--grey-color);
+}
+
+span {
+  color: var(--darkblue-color);
+}
+.logo-img {
+  width: 231px;
+  height: 231px;
+}
+
+.passkeeper {
+  width: 500px;
+  height: auto;
+  display: block;
+  margin-top: -100px;
+}
+
+/**/
+
+.free, .premium {
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.free {
+  background-color:#F4F4F4;
+}
+
+.premium {
+  background-color:#1090CB;
+  color: #FFF;
+  position: relative;
+}
+
+.crown {
+  position: absolute;
+  top: -90px; 
+  left: 50%; 
+  transform: translateX(-50%);
+}
+
+.option {
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.btn-primary {
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.1);
+}
+
+.btn-custom {
+  color: var(--primary-color); 
+  background-color: #FFF; 
+  margin-top: 112px;  
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 991px) {
+  .crown {
+    top: -40px
+  }
+}
+
+@media (max-width: 347px) {
+  .crown {
+    display: none;
+  }
+}
+
+
+
+   
+
+
