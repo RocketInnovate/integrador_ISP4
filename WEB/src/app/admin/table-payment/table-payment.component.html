@@ -1,3 +1,21 @@
-<div class="container-fluid">
-<p>table-payment works!</p>
-</div>
+<div class="container">
+    <h2>Tabla de Pagos</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Usuario</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Método de Pago</th>
+          <th scope="col">Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let payment of paymentsData">
+          <td>{{ payment.user }}</td>
+          <td>{{ payment.price }}</td>
+          <td>{{ payment.method }}</td>
+          <td>{{ payment.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
