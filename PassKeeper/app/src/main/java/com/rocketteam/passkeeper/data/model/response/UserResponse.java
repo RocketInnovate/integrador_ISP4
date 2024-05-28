@@ -4,13 +4,15 @@ public class UserResponse {
     private int id;
     private String email;
     private String password;
+    private Integer premium;
     private String salt;
     private Integer biometric;
 
-    public UserResponse(int id, String email, String password, String salt, Integer biometric) {
+    public UserResponse(int id, String email, String password, Integer premium, String salt, Integer biometric) {
         this.id = id;
         this.email = email;
         this.password = password;
+        this.premium = premium;
         this.salt = salt;
         this.biometric = biometric;
     }
@@ -37,6 +39,11 @@ public class UserResponse {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Integer  getPremium(){ return premium;}
+    public void setPremium(Integer premium) {
+        this.premium = premium;
     }
 
     public String getSalt() {
