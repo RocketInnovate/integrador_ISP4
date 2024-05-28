@@ -40,9 +40,12 @@
             android:exported="false" />
     </application>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
-        tools:ignore="ManifestOrder" /> <!-- Permiso para leer-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Permiso para guardar-->
-
+        tools:ignore="ManifestOrder"
+        android:maxSdkVersion="32" /> <!-- Permiso para leer-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
+        tools:ignore="ScopedStorage" /> <!-- Permiso para guardar datos en el almacenamiento externo-->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Permiso para conectarse a internet-->
     <uses-permission android:name="android.permission.USE_BIOMETRIC" /> <!--  Permiso para la autentificación bieometrica-->
 
 </manifest>
