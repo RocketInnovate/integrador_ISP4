@@ -144,6 +144,8 @@
             // Valida las credenciales del usuario en la base de datos.
             if (dbManager.validateUser(password, email)) {
                 // Si las credenciales son válidas, se inicia la actividad de contraseñas.
+                //TODO: aca habria que validar si el usuario es premiun verificando el
+                // sharedPreference y segun sea redirigir a la ventana que te invite a comprar el premium
                 Intent intent = new Intent(MainActivity.this, ShowPasswordsActivity.class);
                 startActivity(intent);
                 // Cierra la conexión con la base de datos.
@@ -179,6 +181,8 @@
                             Log.i("TAG", "INGRESANDO POR BIOMETRIA");
                             super.onAuthenticationSucceeded(result);
                             // La autenticación biométrica fue exitosa
+                            //TODO: aca habria que validar si el usuario es premiun verificando el
+                            // sharedPreference y segun sea redirigir a la ventana que te invite a comprar el premium
                             startActivity(new Intent(MainActivity.this, ShowPasswordsActivity.class));
                             Toast.makeText(MainActivity.this, "Autenticado con éxito", Toast.LENGTH_SHORT).show();
                             finish();
