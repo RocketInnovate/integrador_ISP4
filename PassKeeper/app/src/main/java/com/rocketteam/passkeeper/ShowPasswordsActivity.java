@@ -57,6 +57,20 @@ public class ShowPasswordsActivity extends AppCompatActivity {
         // Inicializa el DbManager y otros elementos de la actividad.
         dbManager = new DbManager(this);
 
+
+        //Obtengo el estado premium del usuario desde sharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("Storage", MODE_PRIVATE);
+        boolean isPremium = sharedPreferences.getBoolean("isPremium", false);
+
+        //Configuro el ícono premium
+        ImageView premiumIcon = findViewById(R.id.premium_icon);
+        if(isPremium) {
+            premiumIcon.setVisibility(View.VISIBLE);
+        } else {
+            premiumIcon.setVisibility(View.GONE);
+        }
+
+
         TableLayout tableLayout = findViewById(R.id.tableLayout); //busca el id del tablelayout
         TextInputLayout textInputLayout = findViewById(R.id.textInputLayout);
         EditText editTextSearch = findViewById(R.id.editTextSearch);
@@ -75,7 +89,7 @@ public class ShowPasswordsActivity extends AppCompatActivity {
         });
 
         // Nombre del SharedPreferences
-        SharedPreferences sharedPreferences = getSharedPreferences("Storage", MODE_PRIVATE);
+        //SharedPreferences sharedPreferences = getSharedPreferences("Storage", MODE_PRIVATE);
 
         //Comprobar si la clave "userId" existe
         if (sharedPreferences.contains("userId")) {
