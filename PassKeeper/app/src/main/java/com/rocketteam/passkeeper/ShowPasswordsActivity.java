@@ -60,11 +60,12 @@ public class ShowPasswordsActivity extends AppCompatActivity {
 
         //Obtengo el estado premium del usuario desde sharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("Storage", MODE_PRIVATE);
-        boolean isPremium = sharedPreferences.getBoolean("isPremium", false);
+        Log.i("TAG", "PasswordActivity sharedPreference "+sharedPreferences.getAll());
+        int isPremium = sharedPreferences.getInt("premium", -1);
 
         //Configuro el ícono premium
         ImageView premiumIcon = findViewById(R.id.premium_icon);
-        if(isPremium) {
+        if(isPremium>0) {
             premiumIcon.setVisibility(View.VISIBLE);
         } else {
             premiumIcon.setVisibility(View.GONE);
